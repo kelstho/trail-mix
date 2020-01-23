@@ -25,6 +25,10 @@ $('#location-search').on('click', function() {
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
                 newLeng.text(newTrail.length + 'miles');
+                newRow.append(newName);
+                newRow.append(newLoc);
+                newRow.append(newLeng);
+                
             });
             console.log(response)
         });
