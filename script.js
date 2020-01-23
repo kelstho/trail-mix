@@ -19,15 +19,21 @@ $('#location-search').on('click', function() {
         }).done(function (response) {
             response.trails.forEach( function (newTrail) {
                 var newRow = $('<tr>');
+                var newPic = $('<td>');
+                var newImg = $('<img>');
                 var newName = $('<td>');
                 var newLoc = $('<td>');
                 var newLeng = $('<td>');
+                newImg.attr('src', newTrail.imgSqSmall);
+                newPic.append(newImg);
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
                 newLeng.text(newTrail.length + 'miles');
+                newRow.append(newPic);
                 newRow.append(newName);
                 newRow.append(newLoc);
                 newRow.append(newLeng);
+                $('tbody').append(newRow);
                 
             });
             console.log(response)
