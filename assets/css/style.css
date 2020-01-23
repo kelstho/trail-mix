@@ -1,0 +1,12 @@
+body {
+    color: #777777;
+}
+
+img {
+    max-width: 175px;
+}
+
+td {
+    font-size: 20px;
+    padding: 5px;
+}
