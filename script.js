@@ -1,6 +1,7 @@
 
 
 $('#location-search').on('click', function() {
+    $('tbody').empty();
     var location = $('#location-start').val();
     var mapquestQuery = 'http://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
     $.ajax({
