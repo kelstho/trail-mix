@@ -3,6 +3,7 @@ $('#location-search').on('click', function() {
     $('.results-header').empty();
     var tableTitle = $('<h4>');
     tableTitle.attr('class', 'teal-text text-lighten-2');
+    tableTitle.text('Trails');
     $('.results-header').append(tableTitle);
     var location = $('#location-start').val();
     var mapquestQuery = 'http://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
