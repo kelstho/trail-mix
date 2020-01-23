@@ -42,11 +42,18 @@ $('#location-search').on('click', function() {
 
 var latLon ="-94.578559,39.099792"
 var resApi = "o0XevQpqpVayxArGM1iZ5UuLTnHchJUr"
-var resUrl = "https://www.mapquestapi.com/search/v2/radius?="+ latLon+"&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+resApi
+var resUrl = "https://www.mapquestapi.com/search/v2/radius?="+ latLon +"&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+resApi
+function restaurant(data){
 $.ajax({
         url : resUrl,
-        method : 'GET'
-    }).done(function (resResult){
-        console.log(resResult)
+        type : 'GET',
+        dataType: "jsonp",
+    }).done(function (data){
+        console.log(data)
+        var widget1 = show(data);
+        $("#first").html(widget1);
     })
-console.log(resUrl)
+}
+function show(data){
+    return "<h1>"
+}
