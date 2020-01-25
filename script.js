@@ -39,19 +39,18 @@ $('#location-search').on('click', function() {
         });
     });
 })
-// $(".myTrail").attr('dataloc')
-var city = "KansasCity,MO"
-var latLon ="-94.578559,39.099792"
-var resApi = "o0XevQpqpVayxArGM1iZ5UuLTnHchJUr"
-var resUrl = "https://www.mapquestapi.com/search/v2/radius?origin="+city+"&radius=100&maxMatches=20"+"&ambiguities=ignore"+"&hostedData=mqap.ntpois|group_sic_code=?|581208"+"&outFormat=json"+"&key="+resApi
-var LatlonSearch = "https://www.mapquestapi.com/search/v2/radius?="+ latLon+"&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+resApi
 
-var latLon =  "-94.565559,39.015697"
 var resApi = "o0XevQpqpVayxArGM1iZ5UuLTnHchJUr"
-var resUrl = "https://www.mapquestapi.com/search/v2/radius?="+ latLon + "&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+resApi
+var resUrl = "https://www.mapquestapi.com/search/v2/radius?=";
 
+$(document).on("click", ".myTrail", function(){
+    var latLon = $(this).attr("dataloc")
+    searchRes(latLon)
+})
+
+function searchRes(data){
 $.ajax({
-        url : resUrl,
+        url : resUrl + data + "&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+ resApi,
         method : 'GET'
     }).done(function (data){
         console.log(data)
@@ -64,7 +63,7 @@ $.ajax({
         var widget4 = show4(data);
         $("#fourth").html(widget4);
         })
-        
+} 
 console.log(resUrl)
 
 function show1(data){
