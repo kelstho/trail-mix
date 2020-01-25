@@ -55,8 +55,12 @@ function searchRes(data){
     var restautant = data
     console.log(restautant)
     console.log(data)
+
+    var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + restautant + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+"o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
+
+    console.log('REQUESTING:', myUrl)
 $.ajax({
-        url : "https://www.mapquestapi.com/search/v2/radius?=" + restautant + "&radius=1&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+"o0XevQpqpVayxArGM1iZ5UuLTnHchJUr",
+        url : myUrl,
         method : 'GET'
     }).done(function (data){
         console.log(data)
