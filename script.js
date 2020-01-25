@@ -1,10 +1,6 @@
 $('#location-search').on('click', function() {
-    $('tbody').empty();
-    $('.results-header').empty();
-    var tableTitle = $('<h4>');
-    tableTitle.attr('class', 'teal-text text-lighten-2');
-    tableTitle.text('Trails');
-    $('.results-header').append(tableTitle);
+    $('.all-results').empty();
+    $('.results-header').text('Trails');
     var location = $('#location-start').val();
     var mapquestQuery = 'http://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
     $.ajax({
@@ -22,32 +18,35 @@ $('#location-search').on('click', function() {
             method : 'GET',
         }).done(function (response) {
             response.trails.forEach( function (newTrail) {
-                var newRow = $('<tr>');
-                var newPic = $('<td>');
+                var newRow = $('<div>');
+                var newPic = $('<div>');
                 var newImg = $('<img>');
-                var newName = $('<td>');
-                var newLoc = $('<td>');
-                var newLeng = $('<td>');
-                newRow.attr({class: 'myTrail' ,dataloc: newTrail.latitude + ',' + newTrail.longitude})
+                var newName = $('<div>');
+                var newLoc = $('<div>');
+                var newLeng = $('<div>');
+                var newFood = $('<div>')
+                newRow.attr({class: 'myTrail row' ,dataloc: newTrail.latitude + ',' + newTrail.longitude})
                 newImg.attr('src', newTrail.imgSqSmall);
+                newFood.attr('class', 'row ' + newTrail.latitude + ',' + newTrail.longitude)
                 newPic.append(newImg);
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
-                newLeng.text(newTrail.length + 'miles');
+                newLeng.text('Trail Length: ' + newTrail.length + 'miles');
                 newRow.append(newPic);
                 newRow.append(newName);
                 newRow.append(newLoc);
                 newRow.append(newLeng);
-                $('tbody').append(newRow);
-                
+                $('.all-results').append(newRow);
+                $('.all-results').append(newFood);
             });
             console.log(response)
         });
     });
-})
+});
 
 $(document).on("click", ".myTrail", function(){
     var latLng = $(this).attr("dataloc");
+    $('.' + latLng)
     searchRes(latLng);
 });
 
