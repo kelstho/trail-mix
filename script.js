@@ -1,4 +1,10 @@
 $('#location-search').on('click', function() {
+    $('tbody').empty();
+    $('.results-header').empty();
+    var tableTitle = $('<h4>');
+    tableTitle.attr('class', 'teal-text text-lighten-2');
+    tableTitle.text('Trails');
+    $('.results-header').append(tableTitle);
     var location = $('#location-start').val();
     var mapquestQuery = 'http://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
     $.ajax({
@@ -40,20 +46,52 @@ $('#location-search').on('click', function() {
     });
 })
 
-var latLon ="-94.578559,39.099792"
-var resApi = "o0XevQpqpVayxArGM1iZ5UuLTnHchJUr"
-var resUrl = "https://www.mapquestapi.com/search/v2/radius?="+ latLon +"&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+resApi
-function restaurant(data){
+$(document).on("click", ".myTrail", function(){
+    var latLng = $(this).attr("dataloc")
+    searchRes(latLng)
+})
+
+function searchRes(data){
+    var restautant = data
+    console.log(restautant)
+    console.log(data)
+
+    var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + restautant + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+"o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
+
+    console.log('REQUESTING:', myUrl)
 $.ajax({
-        url : resUrl,
-        type : 'GET',
-        dataType: "jsonp",
+        url : myUrl,
+        method : 'GET'
     }).done(function (data){
         console.log(data)
-        var widget1 = show(data);
+        var widget1 = show1(data);
         $("#first").html(widget1);
-    })
+        var widget2 = show2(data);
+        $("#second").html(widget2);
+        var widget3 = show3(data);
+        $("#third").html(widget3);
+        var widget4 = show4(data);
+        $("#fourth").html(widget4);
+        })
+} 
+
+function show1(data){
+    return  "<h1>"+data.searchResults[0].name+"</h1>" +
+            "<h2>"+data.searchResults[0].fields.address+ " " + data.searchResults[0].fields.city+ " " +data.searchResults[0].fields.state+ "</h2>" +
+            "<h2>Distance: "+data.searchResults[0].distance+" "+data.searchResults[0].distanceUnit+"</h2>"
 }
-function show(data){
-    return "<h1>"
+function show2(data){
+    return  "<h1>"+data.searchResults[1].name+"</h1>" +
+            "<h2>"+data.searchResults[1].fields.address+ " " + data.searchResults[1].fields.city+ " " +data.searchResults[1].fields.state+ "</h2>" +
+            "<h2>Distance: "+data.searchResults[1].distance+" "+data.searchResults[1].distanceUnit+"</h2>"
+}
+function show3(data){
+    return  "<h1>"+data.searchResults[2].name+"</h1>" +
+            "<h2>"+data.searchResults[2].fields.address+ " " + data.searchResults[2].fields.city+ " " +data.searchResults[2].fields.state+ "</h2>" +
+            "<h2>Distance: "+data.searchResults[2].distance+" "+data.searchResults[2].distanceUnit+"</h2>"
+}
+function show4(data){
+    return  "<h1>"+data.searchResults[3].name+"</h1>" +
+            "<h2>"+data.searchResults[3].fields.address+ " " + data.searchResults[3].fields.city+ " " +data.searchResults[3].fields.state+ "</h2>" +
+            "<h2>Distance: "+data.searchResults[3].distance+" "+data.searchResults[3].distanceUnit+"</h2>"
 }
