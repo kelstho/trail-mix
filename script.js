@@ -46,17 +46,21 @@ $('#location-search').on('click', function() {
     });
 })
 
-var resApi = "o0XevQpqpVayxArGM1iZ5UuLTnHchJUr"
-var resUrl = "https://www.mapquestapi.com/search/v2/radius?=";
-
 $(document).on("click", ".myTrail", function(){
-    var latLon = $(this).attr("dataloc")
-    searchRes(latLon)
+    var latLng = $(this).attr("dataloc")
+    searchRes(latLng)
 })
 
 function searchRes(data){
+    var restautant = data
+    console.log(restautant)
+    console.log(data)
+
+    var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + restautant + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+"o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
+
+    console.log('REQUESTING:', myUrl)
 $.ajax({
-        url : resUrl + data + "&radius=1&maxMatches=20&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+ resApi,
+        url : myUrl,
         method : 'GET'
     }).done(function (data){
         console.log(data)
@@ -70,7 +74,6 @@ $.ajax({
         $("#fourth").html(widget4);
         })
 } 
-console.log(resUrl)
 
 function show1(data){
     return  "<h1>"+data.searchResults[0].name+"</h1>" +
