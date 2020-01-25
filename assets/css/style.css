@@ -10,9 +10,7 @@ td {
     font-size: 20px;
     padding: 5px;
 }
-h1{
-    font-size: 30px;
-}
-h2{
-    font-size: 20px;
+
+tr {
+    border-bottom: none;
 }
