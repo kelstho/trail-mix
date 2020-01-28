@@ -7,7 +7,6 @@ $('#location-search').on('click', function() {
         url : mapquestQuery,
         method : 'GET',
     }).done(function (geoLocate) {
-        $('.all-results').attr('class', 'bkgrnd')
         console.log(geoLocate)
         var lat = geoLocate.results[0].locations[0].latLng.lat;
         console.log(lat);
@@ -38,7 +37,7 @@ $('#location-search').on('click', function() {
                 newPic.append(newImg);
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
-                newLeng.text('Trail Length: ' + newTrail.length + 'miles');
+                newLeng.text('Trail Length: ' + newTrail.length + ' miles');
                 newRow.append(newPic);
                 newRow.append(newName);
                 newRow.append(newLoc);

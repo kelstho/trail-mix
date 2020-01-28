@@ -1,22 +1,23 @@
+body{
+    background-repeat: no-repeat; 
+    background-attachment: scroll;
+    background-position: center;
+    color: #777777;
+}
+
 img {
     max-width: 175px;
     max-height: 150px;
 }
 
-td {
-    font-size: 20px;
-    padding: 5px;
-}
-
-tr {
-    border-bottom: none;
-}
 h1 {
     font-size: 30px;
 }
+
 h2 {
     font-size: 20px;
 }
+
 #index-banner{
     background: whitesmoke;
 }
