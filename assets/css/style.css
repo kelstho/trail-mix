@@ -34,11 +34,10 @@ h2 {
       }
 }
 
-#first {
-    background-color: teal;
+#trailMix{
     animation-name: slideIn;
     animation-duration: 4s;
-    
+    color:black
 }
 
     
