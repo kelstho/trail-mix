@@ -7,7 +7,6 @@ $('#location-search').on('click', function() {
         url : mapquestQuery,
         method : 'GET',
     }).done(function (geoLocate) {
-        $('.all-results').attr('class', 'bkgrnd');
         console.log(geoLocate);
         var lat = geoLocate.results[0].locations[0].latLng.lat;
         console.log(lat);
