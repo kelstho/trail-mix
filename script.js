@@ -59,31 +59,33 @@ $(document).on("click", ".myTrail", function(){
 });
 
 function searchRes(myLoc, target){
-    console.log(target);
     var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + myLoc + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
 $.ajax({
         url : myUrl,
         method : 'GET'
     }).done(function (data){
-        console.log(myLoc);
-        //var myTarget = '.' + target;
         var targetDiv = $('.' + target);
-        targetDiv.empty();
-        console.log(targetDiv);
-        for (i = 0; i < data.searchResults.length; ++i) {
-            var restraunt = data.searchResults[i];
-            var myResult = $('<div>');
-            var nameDiv = $('<div>');
-            var locDiv = $('<div>');
-            var distDiv = $('<div>');
-            myResult.attr('class', 'col s12 m3 food-results');
-            nameDiv.text(restraunt.name);
-            locDiv.text(restraunt.fields.address+ " " + restraunt.fields.city+ " " +restraunt.fields.state);
-            distDiv.text('Distance: '+restraunt.distance+" "+restraunt.distanceUnit);
-            myResult.append(nameDiv);
-            myResult.append(locDiv);
-            myResult.append(distDiv);
-            targetDiv.append(myResult);
+        if (targetDiv.html() === '') {
+            for (i = 0; i < data.searchResults.length; ++i) {
+                var restraunt = data.searchResults[i];
+                var myResult = $('<div>');
+                var nameDiv = $('<div>');
+                var locDiv = $('<div>');
+                var distDiv = $('<div>');
+                myResult.attr('class', 'col s12 m3 food-results');
+                nameDiv.attr('class', 'rest-name');
+                locDiv.attr('class', 'rest-address');
+                distDiv.attr('class', 'rest-distance');
+                nameDiv.text(restraunt.name);
+                locDiv.text(restraunt.fields.address+ " " + restraunt.fields.city+ " " +restraunt.fields.state);
+                distDiv.text('Distance: '+restraunt.distance+" "+restraunt.distanceUnit);
+                myResult.append(nameDiv);
+                myResult.append(locDiv);
+                myResult.append(distDiv);
+                targetDiv.append(myResult);
+            };
+        } else {
+            targetDiv.empty();
         };
     });
 } ;
