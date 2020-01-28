@@ -21,6 +21,10 @@ h2 {
     font-size: 20px;
 }
 
+.food-row {
+    padding: 20px;
+    background-color: lightgray;
+}
 
 @keyframes slideIn {
     from {
