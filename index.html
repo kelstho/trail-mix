@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
-  <body>
-
+  
+  <body background="assets/css/blue_ridge.jpg">      
     <!-- Jumbotron -->
     <div id="index-banner" class="container">
-      <div class="section no-pad-bot">
+      <div class="section no-pad-bot" style="border: solid; border-color: lightslategray;">
         <div class="container">
-          <h1 class="header center teal-text text-lighten-2">Trail Mix</h1>
+          <h1 class="header center teal-text text-lighten-2" id="trailMix">Trail Mix</h1>
           <div class="row center">
             <h5 class="header col s12 light">Drinking Team with a Cyclist Problem</h5>
           </div>
@@ -28,7 +28,7 @@
     <div class="container">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s12">
+          <div class="input-field col s12" style="background: whitesmoke; border: solid; border-color: lightslategray;">
             <input id="location-start" type="text" class="validate">
             <label for="location-start">Start Location (City Name or Zip Code)</label>
           </div>
@@ -42,6 +42,7 @@
 
     <!-- Results Header -->
     <div class="container">
+
       <div class="row">
         <div class="col s12 teal-text text-lighten-2 results-header"></div>
       </div>
@@ -55,6 +56,7 @@
         <div class="col s12 m3 trail-results"></div>
         <div class="col s12 m3 trail-results"></div>
         <div class="col s12 m3 trail-results"></div>
+
       </div>
       <!-- Food Results Row -->
       <div class="row food-row">
@@ -71,4 +73,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="script.js"></script>
   </body>
+
 </html>
