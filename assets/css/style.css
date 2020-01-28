@@ -37,6 +37,12 @@ h2 {
     border: solid;
 }
 
+.trail-results {
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
 .rest-name {
     font-weight: bold;
 }
