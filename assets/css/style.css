@@ -1,3 +1,11 @@
+body{
+    background-repeat: no-repeat; 
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    color: #777777;
+}
+
 img {
     max-width: 175px;
     max-height: 150px;
@@ -25,6 +33,7 @@ h2 {
     background-color: whitesmoke;
     margin: 0px;
     padding: 5px;
+    border: solid;
 }
 
 from {
@@ -43,11 +52,3 @@ from {
     animation-duration: 4s;
     color:black
 } */
-
-body{
-    background-repeat: no-repeat; 
-    background-attachment: scroll;
-    background-position: center;
-    background-size: cover;
-    color: #777777;
-}
