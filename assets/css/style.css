@@ -21,6 +21,12 @@ h2 {
     background: whitesmoke;
 }
 
+.myTrail, .food-row {
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 5px;
+}
+
 from {
     margin-left: 100%;
     width: 300%; 
