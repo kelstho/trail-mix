@@ -29,7 +29,13 @@ h1 {
 }
 
 #index-banner{
+    margin-top: 20px;
+    margin-bottom: 7px;
     background: whitesmoke;
+}
+
+.input-row {
+    margin-bottom: 5px;
 }
 
 .myTrail, .food-row {
