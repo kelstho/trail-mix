@@ -53,6 +53,11 @@ h1 {
 
 .rest-name {
     font-weight: bold;
+    margin-top: 7px;
+}
+
+.rest-distance {
+    margin-bottom: 7px;
 }
 
 from {
