@@ -1,5 +1,6 @@
 img {
     max-width: 175px;
+    max-height: 150px;
 }
 
 td {
@@ -20,16 +21,15 @@ h2 {
     background: whitesmoke;
 }
 
-/* @keyframes slideIn {
-    from {
-        margin-left: 100%;
-        width: 300%; 
-      }
-    
-      to {
-        margin-left: 0%;
-        width: 100%;
-      }
+from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 #trailMix{
