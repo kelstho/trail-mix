@@ -17,17 +17,23 @@ $('#location-search').on('click', function() {
             url : trailFindQuery,
             method : 'GET',
         }).done(function (response) {
+            var iter = 0;
             response.trails.forEach( function (newTrail) {
+                var newtarg = 'targ' + iter;
                 var newRow = $('<div>');
                 var newPic = $('<div>');
                 var newImg = $('<img>');
                 var newName = $('<div>');
                 var newLoc = $('<div>');
                 var newLeng = $('<div>');
-                var newFood = $('<div>')
-                newRow.attr({class: 'myTrail row' ,dataloc: newTrail.latitude + ',' + newTrail.longitude})
+                var newFood = $('<div>');
+                newRow.attr({class: 'myTrail row', dataloc: newTrail.latitude + ',' + newTrail.longitude, datatarget: newtarg});
                 newImg.attr('src', newTrail.imgSqSmall);
-                newFood.attr('class', 'row ' + newTrail.latitude + ',' + newTrail.longitude)
+                newPic.attr('class', 'col s12 m3 trail-image');
+                newName.attr('class', 'col s12 m3 trail-results');
+                newLoc.attr('class', 'col s12 m3 trail-results');
+                newLeng.attr('class', 'col s12 m3 trail-results');
+                newFood.attr('class', 'row food-row ' + newtarg);
                 newPic.append(newImg);
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
@@ -38,36 +44,46 @@ $('#location-search').on('click', function() {
                 newRow.append(newLeng);
                 $('.all-results').append(newRow);
                 $('.all-results').append(newFood);
+                iter = ++iter;
+                console.log(iter)
             });
-            console.log(response)
+            console.log(response);
         });
     });
 });
 
 $(document).on("click", ".myTrail", function(){
     var latLng = $(this).attr("dataloc");
-    $('.' + latLng)
-    searchRes(latLng);
+    var myTarg = $(this).attr('datatarget');
+    searchRes(latLng, myTarg);
 });
 
-function searchRes(data){
-    var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + data + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json"+"&key="+"o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
+function searchRes(myLoc, target){
+    console.log(target);
+    var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + myLoc + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
 $.ajax({
         url : myUrl,
         method : 'GET'
     }).done(function (data){
+        console.log(myLoc);
+        //var myTarget = '.' + target;
+        var targetDiv = $('.' + target);
+        targetDiv.empty();
+        console.log(targetDiv);
         for (i = 0; i < data.searchResults.length; ++i) {
             var restraunt = data.searchResults[i];
-            var targetDiv = $('#food' + i);
-            var nameDiv = $('<p>');
-            var locDiv = $('<p>');
-            var distDiv = $('<p>');
+            var myResult = $('<div>');
+            var nameDiv = $('<div>');
+            var locDiv = $('<div>');
+            var distDiv = $('<div>');
+            myResult.attr('class', 'col s12 m3 food-results');
             nameDiv.text(restraunt.name);
             locDiv.text(restraunt.fields.address+ " " + restraunt.fields.city+ " " +restraunt.fields.state);
             distDiv.text('Distance: '+restraunt.distance+" "+restraunt.distanceUnit);
-            targetDiv.append(nameDiv);
-            targetDiv.append(locDiv);
-            targetDiv.append(distDiv);
+            myResult.append(nameDiv);
+            myResult.append(locDiv);
+            myResult.append(distDiv);
+            targetDiv.append(myResult);
         };
-        });
+    });
 } ;
