@@ -11,7 +11,15 @@ img {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 65px;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+#tagline {
+    font-size: 25px;
+    margin-top: 5px;
 }
 
 h2 {
