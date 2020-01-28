@@ -32,8 +32,12 @@ h2 {
 .myTrail, .food-row {
     background-color: whitesmoke;
     margin: 0px;
-    padding: 5px;
+    padding: 10px;
     border: solid;
+}
+
+.rest-name {
+    font-weight: bold;
 }
 
 from {
