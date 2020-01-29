@@ -22,20 +22,30 @@ h2 {
     background: whitesmoke;
 }
 
+.myTrail, .food-row {
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 10px;
+    border: solid;
+}
+
+.rest-name {
+    font-weight: bold;
+}
+
+from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
 #trailMix{
     animation-name: slideIn;
     animation-duration: 4s;
     color:black
-}
-
-body{
-    background-repeat: no-repeat; 
-    background-attachment: scroll;
-    background-position: center;
-    background-size: cover;
-    color: #777777;
-}
-
-#bkgrnd{
-    background: whitesmoke;
-}
+} */
