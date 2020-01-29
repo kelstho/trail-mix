@@ -38,6 +38,7 @@ $('#location-search').on('click', function() {
                 newName.text(newTrail.name);
                 newLoc.text(newTrail.location);
                 newLeng.text('Trail Length: ' + newTrail.length + ' miles');
+                newFood.text('Click above to show or hide restaurants for that trail.');
                 newRow.append(newPic);
                 newRow.append(newName);
                 newRow.append(newLoc);
@@ -65,7 +66,8 @@ $.ajax({
         method : 'GET'
     }).done(function (data){
         var targetDiv = $('.' + target);
-        if (targetDiv.html() === '') {
+        if (targetDiv.html() === 'Click above to show or hide restaurants for that trail.') {
+            targetDiv.empty();
             for (i = 0; i < data.searchResults.length; ++i) {
                 var restraunt = data.searchResults[i];
                 var myResult = $('<div>');
@@ -86,6 +88,7 @@ $.ajax({
             };
         } else {
             targetDiv.empty();
+            targetDiv.text('Click above to show or hide restaurants for that trail.');
         };
     });
 } ;
