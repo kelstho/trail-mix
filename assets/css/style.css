@@ -11,15 +11,36 @@ img {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 65px;
+    font-weight: bold;
+    margin-top: 7px;
+    margin-bottom: 0px;
 }
 
-h2 {
-    font-size: 20px;
+#tagline {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+#jumbotron-div {
+    border: solid;
+    border-color: lightslategray;
+}
+
+.results-header {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
 }
 
 #index-banner{
+    margin-top: 20px;
+    margin-bottom: 7px;
     background: whitesmoke;
+}
+
+.input-row {
+    margin-bottom: 5px;
 }
 
 .myTrail, .food-row {
@@ -29,8 +50,19 @@ h2 {
     border: solid;
 }
 
+.trail-results {
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 5px;
+}
+
 .rest-name {
     font-weight: bold;
+    margin-top: 7px;
+}
+
+.rest-distance {
+    margin-bottom: 7px;
 }
 
 from {
