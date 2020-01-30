@@ -46,7 +46,6 @@ $('#location-search').on('click', function() {
                 $('.all-results').append(newRow);
                 $('.all-results').append(newFood);
                 iter = ++iter;
-                console.log(iter)
             });
             console.log(response);
         });
