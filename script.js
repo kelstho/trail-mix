@@ -2,7 +2,7 @@ $('#location-search').on('click', function() {
     $('.all-results').empty();
     $('.results-header').text('Trails');
     var location = $('#location-start').val();
-    var mapquestQuery = 'http://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
+    var mapquestQuery = 'https://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
     $.ajax({
         url : mapquestQuery,
         method : 'GET',
