@@ -20,6 +20,10 @@ body{
     color: white;
 }
 
+.btn {
+    background-color: #207300;
+}
+
 #index-banner{
     margin-top: 20px;
     margin-bottom: 7px;
