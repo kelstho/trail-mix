@@ -1,6 +1,6 @@
 $('#location-search').on('click', function () {
-    $('.results-header').text('');
-    $('.results-header').attr('id', 'hide-header');
+    $('.results-header').text('Searching...');
+    $('.results-header').removeAttr('id');
     $('.all-results').empty();
     var location = $('#location-start').val();
     var mapquestQuery = 'https://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
@@ -21,11 +21,9 @@ $('#location-search').on('click', function () {
             var iter = 0;
             if (response.trails.length === 0) {
                 $('.results-header').text('Sorry, looks like there are no trails near ' + location);
-                $('.results-header').removeAttr('id');
                 return
             }
             $('.results-header').text('Trails Located Near ' + location);
-            $('.results-header').removeAttr('id');
             response.trails.forEach(function (newTrail) {
                 var newtarg = 'targ' + iter;
                 var newRow = $('<div>');
