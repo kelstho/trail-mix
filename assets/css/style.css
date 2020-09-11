@@ -9,6 +9,11 @@ body{
 #jumbotron-div {
     border: solid;
     border-color: lightslategray;
+    background-color: #a6d7f5;
+}
+
+#trail-mix {
+    color: white;
 }
 
 .input-field input[type=text]:focus + label {
@@ -51,15 +56,24 @@ img {
     font-size: 30px;
     font-weight: bold;
     text-align: center;
-    background-color: whitesmoke;
+    background-color: #a6d7f5;
     margin-bottom: 10px;
     border: solid;
     border-color: lightslategray;
     padding: 25px;
 }
 
-.myTrail, .food-row {
-    background-color: whitesmoke;
+.myTrail {
+    background-color: #ffd492;
+    margin: 3px;
+    padding: 10px;
+    border: solid;
+    border-color: lightslategray;
+}
+
+.food-row {
+    color: whitesmoke;
+    background-color: #ae6e3f;
     margin: 3px;
     padding: 10px;
     border: solid;
