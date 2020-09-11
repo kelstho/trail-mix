@@ -35,6 +35,10 @@ $('#location-search').on('click', function () {
                 var newFood = $('<div>');
                 newRow.attr({ class: 'myTrail row', dataloc: newTrail.latitude + ',' + newTrail.longitude, datatarget: newtarg });
                 newImg.attr('src', newTrail.imgSqSmall);
+                if (newTrail.imgSqSmall === "") {
+                    newImg.attr('src', 'assets/no_image.jpg');
+                    newImg.attr('class', 'no-image');
+                }
                 newPic.attr('class', 'col s12 m3 trail-image');
                 newName.attr('class', 'col s12 m3 trail-results');
                 newLoc.attr('class', 'col s12 m3 trail-results');
