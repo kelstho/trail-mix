@@ -44,10 +44,20 @@ img {
     margin-bottom: 5px;
 }
 
+#hide-header {
+    background-color: transparent;
+    border: 0px;
+}
+
 .results-header {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    border: solid;
+    border-color: lightslategray;
+    padding: 25px;
 }
 
 .myTrail, .food-row {
@@ -55,6 +65,7 @@ img {
     margin: 3px;
     padding: 10px;
     border: solid;
+    border-color: lightslategray;
 }
 
 .trail-results {

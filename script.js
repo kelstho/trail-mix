@@ -1,6 +1,5 @@
 $('#location-search').on('click', function () {
     $('.all-results').empty();
-    $('.results-header').text('Trails');
     var location = $('#location-start').val();
     var mapquestQuery = 'https://open.mapquestapi.com/geocoding/v1/address?key=zFTKFOl5heUyBHHsvaEVGGlUnB0XQipR&location=' + location;
     $.ajax({
@@ -18,6 +17,8 @@ $('#location-search').on('click', function () {
             method: 'GET',
         }).done(function (response) {
             var iter = 0;
+            $('.results-header').text('Trails Located Near ' + location);
+            $('.results-header').removeAttr('id');
             response.trails.forEach(function (newTrail) {
                 var newtarg = 'targ' + iter;
                 var newRow = $('<div>');
