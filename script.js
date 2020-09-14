@@ -78,7 +78,7 @@ function searchRes(myLoc, target) {
         if (targetDiv.html() === 'Click on trail to show or hide restaurants located near its endpoint.') {
             targetDiv.empty();
             for (i = 0; i < data.searchResults.length; ++i) {
-                var restraunt = data.searchResults[i];
+                var restaurant = data.searchResults[i];
                 var myResult = $('<div>');
                 var nameDiv = $('<div>');
                 var locDiv = $('<div>');
@@ -87,9 +87,9 @@ function searchRes(myLoc, target) {
                 nameDiv.attr('class', 'rest-name');
                 locDiv.attr('class', 'rest-address');
                 distDiv.attr('class', 'rest-distance');
-                nameDiv.text(restraunt.name);
-                locDiv.text(restraunt.fields.address + " " + restraunt.fields.city + " " + restraunt.fields.state);
-                distDiv.text('Distance: ' + restraunt.distance.toFixed(1) + " " + " miles");
+                nameDiv.text(restaurant.name);
+                locDiv.text(restaurant.fields.address + " " + restaurant.fields.city + " " + restaurant.fields.state);
+                distDiv.text('Distance: ' + restaurant.distance.toFixed(1) + " " + " miles");
                 myResult.append(nameDiv);
                 myResult.append(locDiv);
                 myResult.append(distDiv);
