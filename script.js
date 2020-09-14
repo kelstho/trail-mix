@@ -29,7 +29,7 @@ $('#location-search').on('click', function () {
                 var newRow = $('<div>');
                 var newPic = $('<div>');
                 var newImg = $('<img>');
-                var newName = $('<div>');
+                var newName = $('<a>');
                 var newLoc = $('<div>');
                 var newLeng = $('<div>');
                 var newFood = $('<div>');
@@ -41,6 +41,8 @@ $('#location-search').on('click', function () {
                 }
                 newPic.attr('class', 'col s12 m3 trail-image');
                 newName.attr('class', 'col s12 m3 trail-results');
+                newName.attr('href', newTrail.url);
+                newName.attr('target', '_blank');
                 newLoc.attr('class', 'col s12 m3 trail-results');
                 newLeng.attr('class', 'col s12 m3 trail-results');
                 newFood.attr('class', 'row food-row ' + newtarg);
