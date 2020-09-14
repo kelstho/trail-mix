@@ -6,11 +6,11 @@ Trail Mix allows a user to search for cycling trails within any given city or zi
 
 ![Searched](/assets/trail2.png?raw=true)
 
-The user may click on any of the trail titles to open a new page hosted by the MTB Project, containing more information about the selected trail, such as trail locations, maps, and condition.
+The user may click on any of the trail titles to open a new page hosted by the MTB Project, containing more information about the selected trail, such as trail locations, maps, and conditions.
 
 ![Clicked](/assets/trail3.png?raw=true)
 
-Once the list has been returned, the user can click on any of the div of any of the trails of their choice, and another div will appear underneath the selected trail displaying the four restaurants that are closest to the end of the trail. It will also display the the distance from the end of the trail to the restaurant, as well as the restaurant's address.
+Once the list has been returned, the user can click on any of the divs of any of the trails of their choice, and another div will appear underneath the selected trail displaying the four restaurants that are closest to the end of the trail. It will also display the the distance from the end of the trail to the restaurant, as well as the restaurant's address.
 
 ## Technologies
 APIs: MapQuest for geolocation and restaurants, MTB Project for trails
