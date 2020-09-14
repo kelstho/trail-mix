@@ -89,7 +89,7 @@ function searchRes(myLoc, target) {
                 distDiv.attr('class', 'rest-distance');
                 nameDiv.text(restraunt.name);
                 locDiv.text(restraunt.fields.address + " " + restraunt.fields.city + " " + restraunt.fields.state);
-                distDiv.text('Distance: ' + restraunt.distance + " " + restraunt.distanceUnit);
+                distDiv.text('Distance: ' + restraunt.distance.toFixed(1) + " " + " miles");
                 myResult.append(nameDiv);
                 myResult.append(locDiv);
                 myResult.append(distDiv);
