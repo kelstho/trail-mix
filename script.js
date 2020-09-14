@@ -64,12 +64,12 @@ $('#location-search').on('click', function () {
     });
 });
 
-$('#location-start').keypress(function(event) {
+$('#location-start').keypress(function (event) {
     if (event.keyCode === 13) {
         event.preventDefault();
         $('#location-search').click();
     }
-})
+});
 
 $(document).on("click", ".myTrail", function () {
     var latLng = $(this).attr("dataloc");
