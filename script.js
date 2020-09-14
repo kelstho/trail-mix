@@ -33,7 +33,7 @@ $('#location-search').on('click', function () {
                 var newLoc = $('<div>');
                 var newLeng = $('<div>');
                 var newFood = $('<div>');
-                newRow.attr({ class: 'myTrail row', dataloc: newTrail.latitude + ',' + newTrail.longitude, datatarget: newtarg });
+                newRow.attr({ class: 'myTrail center row', dataloc: newTrail.latitude + ',' + newTrail.longitude, datatarget: newtarg });
                 newImg.attr('src', newTrail.imgSqSmall);
                 if (newTrail.imgSqSmall === "") {
                     newImg.attr('src', 'assets/no_image.jpg');
