@@ -4,6 +4,7 @@ body{
     background-position: center;
     background-size: cover;
     color: #777777;
+    line-height: 1.4;
 }
 
 #jumbotron-div {
