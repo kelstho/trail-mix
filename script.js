@@ -47,7 +47,7 @@ $('#location-search').on('click', function () {
         newName.text(newTrail.name);
         newLoc.text(newTrail.location);
         newLeng.text('Trail Length: ' + newTrail.length + ' miles');
-        newFood.text('Click on trail to show or hide restaurants located near its endpoint.');
+        newFood.text("Click on trail picture to show or hide restaurants located near that trail's endpoint.");
         newRow.append(newPic);
         newRow.append(newName);
         newRow.append(newLoc);
@@ -80,7 +80,7 @@ function searchRes(myLoc, target) {
     method: 'GET'
   }).done(function (data) {
     var targetDiv = $('.' + target);
-    if (targetDiv.html() === 'Click on trail to show or hide restaurants located near its endpoint.') {
+    if (targetDiv.html() === "Click on trail picture to show or hide restaurants located near that trail's endpoint.") {
       targetDiv.empty();
       for (i = 0; i < data.searchResults.length; ++i) {
         var restaurant = data.searchResults[i];
@@ -102,7 +102,7 @@ function searchRes(myLoc, target) {
       };
     } else {
       targetDiv.empty();
-      targetDiv.text('Click on trail to show or hide restaurants located near its endpoint.');
+      targetDiv.text("Click on trail picture to show or hide restaurants located near that trail's endpoint.");
     };
   });
 };
