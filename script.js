@@ -1,3 +1,4 @@
+// Initial trail search function
 $('#location-search').on('click', function () {
   $('.results-header').text('Searching...');
   $('.results-header').removeAttr('id');
@@ -60,6 +61,7 @@ $('#location-search').on('click', function () {
   });
 });
 
+// If enter button is pressed, search will be run
 $('#location-start').keypress(function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
@@ -67,12 +69,15 @@ $('#location-start').keypress(function (event) {
   }
 });
 
+// Clicking on the div containing the trail will search for
+// and reveal restaurants near the end of selected trail
 $(document).on("click", ".myTrail", function () {
   var latLng = $(this).attr("dataloc");
   var myTarg = $(this).attr('datatarget');
   searchRes(latLng, myTarg);
 });
 
+// Function to search for restaurants
 function searchRes(myLoc, target) {
   var myUrl = "https://www.mapquestapi.com/search/v2/radius?origin=" + myLoc + "&radius=10&maxMatches=4&ambiguities=ignore&hostedData=mqap.ntpois|group_sic_code=?|581208&outFormat=json&key=o0XevQpqpVayxArGM1iZ5UuLTnHchJUr";
   $.ajax({
